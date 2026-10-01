@@ -1,0 +1,73 @@
+{
+  "model": "study-office-dropout-xgb",
+  "version": "2026-10-01",
+  "target": "left (1 = left later in the first semester)",
+  "decision_week": 6,
+  "numeric_features": [
+    "age",
+    "admission_grade",
+    "international",
+    "first_gen",
+    "su_scholarship",
+    "fees_owed",
+    "moved_from_home",
+    "married",
+    "evening_programme",
+    "logins_total",
+    "logins_last3",
+    "logins_trend",
+    "submitted_share",
+    "missed_last3",
+    "quiz_mean",
+    "weeks_since_login"
+  ],
+  "categorical_features": [
+    "programme",
+    "gender"
+  ],
+  "categories": {
+    "programme": [
+      "Business Administration",
+      "Communication & Digital Media",
+      "Health Science",
+      "Learning & Innovation",
+      "Social Work",
+      "Software",
+      "Sustainable Biotechnology",
+      "Tourism"
+    ],
+    "gender": [
+      "female",
+      "male"
+    ]
+  },
+  "periods": {
+    "train": "cohorts 2023-2024",
+    "validation": "cohort 2025"
+  },
+  "metrics_validation": {
+    "auc": 0.802,
+    "auc_logistic_regression": 0.809,
+    "precision_at_40": 0.35,
+    "recall_at_40": 0.215
+  },
+  "capacity": 40,
+  "costs_dkk": {
+    "conversation": 500,
+    "false_alarm": 2000,
+    "student_leaves": 60000,
+    "share_helped": 0.3
+  },
+  "dropped_as_leakage": [
+    "ects_passed_sem1",
+    "deregistration_form_opened",
+    "last_login_week"
+  ],
+  "versions": {
+    "python": "3.11.15",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.0.5",
+    "pandas": "3.0.2",
+    "numpy": "2.4.4"
+  }
+}

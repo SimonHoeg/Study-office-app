@@ -1,0 +1,4 @@
+# No version pins needed: the model is stored as XGBoost JSON + plain numbers (see portable.py), not a pickle.
+streamlit
+pandas
+xgboost-cpu
